@@ -1,11 +1,10 @@
 "use client";
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutLoader from "@/components/AboutLoader";
 import anime from "animejs/lib/anime.es.js";
 import Navbar from "@/components/Navbar";
-import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +34,16 @@ export default function Projects() {
       easing: "easeOutExpo",
       duration: 2000,
       delay: (el, i) => 2200 + 50 * i,
+    });
+
+    anime.timeline().add({
+      targets: ".scroll",
+      translateY: [200, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 2000,
+      delay: (el, i) => 2300 + 50 * i,
     });
 
     let ctx = gsap.context(() => {
@@ -132,6 +141,8 @@ export default function Projects() {
             <div className="name2">
               <span>balogun</span>
             </div>
+
+            <div className="scroll">scroll</div>
           </div>
 
           <div className="box2">
@@ -196,41 +207,103 @@ export default function Projects() {
 
             <div className="right">
               <div className="animate-text">
-                <span>COLLECTION /19* W</span>
+                <span>DALL-E IMAGE GENERATOR</span>
+                <p>
+                  A fullstack AI image generation app built on Open-AI Dall-E
+                  api. It generates images <br />
+                  based on a prompt passed in by the user.
+                  <br />
+                  <br />
+                  Built with: React, MongoDb, Node, Tailwind, Open Ai.
+                </p>
+                <a
+                  href="https://image-ai-gen.netlify.app/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  VISIT
+                </a>
               </div>
 
               <div className="img-container">
-                <img src="/img1.jpg" alt="" />
+                <img src="/gen.jpg" alt="" className="project-image" />
               </div>
             </div>
 
             <div className="right">
               <div className="animate-text">
-                <span>COLLECTION /19* W</span>
+                <span>MEMORIES</span>
+                <p>
+                  A fully functional MERN stack social web app that allows users
+                  to post pictures, like
+                  <br /> and comment on the posts of other users.
+                  <br />
+                  <br />
+                  Built with: React, MongoDb, Redux, Node, Material Ui.
+                </p>
+                <a
+                  href="https://memmries.netlify.app/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  VISIT
+                </a>
               </div>
 
               <div className="img-container">
-                <img src="/img3.jpg" alt="" />
+                <img src="/mem.png" alt="" className="project-image" />
               </div>
             </div>
 
             <div className="right">
               <div className="animate-text">
-                <span>COLLECTION /19* W</span>
+                <span>MOVIEZ</span>
+                <p>
+                  A fully functional movie web app that allows users to get the
+                  latest movies, filter by <br /> genre or category, search for
+                  any movie and also watchlist movies.
+                  <br />
+                  <br />
+                  Built with: React, Redux Toolkit, Tailwind, Tmdb Api.
+                </p>
+                <a
+                  href="https://mooviezzz.netlify.app/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit
+                </a>
               </div>
 
               <div className="img-container">
-                <img src="/img3.jpg" alt="" />
+                <img src="/moviez.png" alt="" className="project-image" />
               </div>
             </div>
 
             <div className="right">
               <div className="animate-text">
-                <span>COLLECTION /19* W</span>
+                <span>CRYPTOWURLD</span>
+                <p>
+                  A fully functional web app that allows users to get the latest
+                  crypto news and stats by
+                  <br />
+                  It is also allows users connect to their MetaMask wallet and
+                  send Ethereum.
+                  <br />
+                  <br />
+                  Built with: React, Context Api, Solidity, Ether.js, Rapid Api.
+                </p>
+                <a
+                  href="https://cryptowurld.netlify.app/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit
+                </a>
               </div>
 
               <div className="img-container">
-                <img src="/img3.jpg" alt="" />
+                <img src="/cryptowurld.png" alt="" className="project-image" />
               </div>
             </div>
           </div>

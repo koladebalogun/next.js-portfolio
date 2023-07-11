@@ -18,7 +18,7 @@
   }
   
   .box {
-    background: #fff;
+    background: #000;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -39,14 +39,17 @@
     font-size: 70px;
     text-transform: uppercase;
     margin: 0;
+    color: #fff;
   }
 
   .header2{
     font-size: 90px;
     text-transform: uppercase;
     margin: 0;
+    color: orangered;
     text-decoration: line-through;
-    text-decoration-color: orangered;
+    text-decoration-color: white;
+    mix-blend-mode: difference;
   }
   
   .header1 .letter,
@@ -60,7 +63,7 @@
     right: 2%;
     bottom: 50%;
     font-size: 14px;
-    color: #000;
+    color: #fff;
     line-height: 1.7;
     width: 30%;
   }
@@ -76,7 +79,7 @@
     right: 2%;
     bottom: 30%;
     font-size: 14px;
-    color: #000;
+    color: #fff;
     line-height: 1.7;
     width: 30%;
   }
@@ -100,7 +103,7 @@
     text-transform: uppercase;
     text-decoration: none;
     font-size: 18px;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     transition: all 0.7s ease;
   }

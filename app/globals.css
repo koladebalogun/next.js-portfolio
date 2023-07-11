@@ -15,6 +15,7 @@ body {
   height: 100vh;
   /* overflow: hidden; */
   font-family: monument;
+  background-color: #000;
 }
 
 nav {
@@ -94,7 +95,7 @@ nav h1 {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
-img {
+.img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -153,6 +154,7 @@ img {
   font-size: 120px;
   font-weight: 500;
   transition: all 0.7s ease;
+  color: #fff;
 }
 
 .primary-menu a:hover{
@@ -173,7 +175,7 @@ section{
 }
 
 .section-1{
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
 }
 
@@ -194,6 +196,7 @@ section{
   /* align-items: center; */
   justify-content: center;
   flex-direction: column;
+  color: #fff;
 }
 
 .name{
@@ -206,6 +209,12 @@ section{
   text-transform: uppercase;
   text-decoration: line-through;
   text-decoration-color: orangered;
+}
+
+.scroll{
+  margin-top: 90px;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
 
 .box2{
@@ -356,30 +365,53 @@ p{
 }
 
 .animate-text{
-  height: 130px;
-  background-color: #fff;
-  color: #000;
-  font-size: 30px;
+  height: 100px;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
+  margin-top: 10px;
+  padding: 0px 10px;
 }
 
 .animate-text span{
+  font-size: 20px;
   /* animation: loop 10s linear infinite; */
   display: inline-block;
+  color: orangered;
+}
+
+.animate-text p{
+  font-size: 8px;
+  margin-top: 10px;
+  width: 20px;
+}
+
+
+
+.animate-text a{
+  font-size: 11px;
+  margin-top: 8px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.animate-text a:hover{
+  text-decoration: line-through;
+  text-decoration-color: orangered;
 }
 
 .img-container {
-  width: 100%;
-  height: 780px;
+  width: 530px;
+  height: 700px;
   padding: 0.5rem;
   background-color: #000;
 }
 
-.img-container img{
+.project-image{
   width: 100%;
-  object-fit:cover;
-
+  height: 100%;
+  /* object-fit: cover; */
 }
 
 .about{

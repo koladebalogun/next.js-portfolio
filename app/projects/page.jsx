@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutLoader from "@/components/AboutLoader";
 import Navbar from "@/components/Navbar";
-import { Animate } from "@/hooks/animate";
 import data from "../../utils/projectData.json";
 import Images from "@/components/Images";
 
@@ -14,13 +13,10 @@ export default function Projects() {
   const containerRef = useRef(null);
   console.log(data);
 
-  const CTX = (i) => {
-    console.log(i);
-    const index = i;
+  useLayoutEffect(() => {
     const section = document.querySelectorAll("section");
 
     let ctx = gsap.context(() => {
-      console.log(index);
       const tl = gsap
         .timeline({
           scrollTrigger: {
@@ -102,16 +98,6 @@ export default function Projects() {
       };
     });
     return () => ctx.revert();
-  };
-
-  useLayoutEffect(() => {
-    if (containerRef.current.offsetWidth < 1000) {
-      Animate(".name", ".name2", ".scroll");
-      CTX(-80);
-    } else {
-      Animate(".name", ".name2", ".scroll");
-      CTX(5);
-    }
   }, []);
 
   return (

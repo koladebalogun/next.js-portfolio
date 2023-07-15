@@ -29,7 +29,7 @@ const page = () => {
 
   return (
     <>
-      {/* <AboutLoader /> */}
+      <AboutLoader />
       <Navbar />
       <div className={style.container}>
         <div className={style.wrapperimg}>
@@ -68,11 +68,13 @@ const page = () => {
             </h6>
           </div>
 
-          <div className={style.projects} ref={projects}>
-            <Link href="/projects">projects</Link>
-          </div>
+          <div className={style.links}>
+            <div className={style.projects} ref={projects}>
+              <Link href="/projects">projects</Link>
+            </div>
 
-          <SocialMediaIcons />
+            <SocialMediaIcons />
+          </div>
         </div>
       </div>
     </>

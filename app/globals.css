@@ -199,7 +199,7 @@ nav h1 {
   }
 }
 
-@media (max-width: 498px) {
+@media (max-width: 500px) {
   .overlay {
     display: block;
   }
@@ -220,7 +220,7 @@ nav h1 {
 
   .primary-menu a {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     transition: all 0.7s ease;
     color: #fff;
@@ -489,7 +489,7 @@ section {
   }
 
   .item-overlay{
-    border: 1px solid #fff;
+    display: none;
   }
 
   .item-hover {
@@ -498,10 +498,11 @@ section {
 
   .item-copy .item-id {
     font-size: 100px;
+    display: none;
   }
 }
 
-@media (max-width: 498px) {
+@media (max-width: 500px) {
   .box1 {
     width: 50%;
     padding: 10px;
@@ -523,7 +524,7 @@ section {
 
   .gallery-col img {
     min-height: 250px;
-    width: 70px;
+    width: 90px;
   }
 
 

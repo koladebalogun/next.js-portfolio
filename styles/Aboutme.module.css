@@ -93,11 +93,19 @@
   text-transform: uppercase;
 }
 
+.links{
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .projects a {
-  position: absolute;
+  /* position: absolute;
   bottom: 10%;
   left: 15%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   text-transform: uppercase;
   text-decoration: none;
   font-size: 18px;
@@ -218,12 +226,12 @@
     font-size: 20px;
   }
 
-  .projects a {
+  /* .projects a {
     left: 15%;
-  }
+  } */
 }
 
-@media only screen and (max-width: 498px) {
+@media only screen and (max-width: 500px) {
   .container {
     padding: 20px;
   }
@@ -279,16 +287,16 @@
     font-size: 20px;
   }
 
-  .projects a {
-   left: 23%;
-    bottom: -10%;
-  }
+  /* .projects a {
+   left: 50%;
+    bottom: -20%;
+  } */
 }
 
 @media only screen and (max-width: 375px){
-  .projects a {
+  /* .projects a {
     left: 23%;
      bottom: -25%;
-   }
+   } */
 }
 

@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import style from "../../styles/Aboutme.module.css";
 import Link from "next/link";
 import { Animate } from "@/hooks/animate";
+import SocialMediaIcons from "@/components/SocialMediaIcons";
 
 const page = () => {
   const header1 = useRef(null);
@@ -28,7 +29,7 @@ const page = () => {
 
   return (
     <>
-      <AboutLoader />
+      {/* <AboutLoader /> */}
       <Navbar />
       <div className={style.container}>
         <div className={style.wrapperimg}>
@@ -70,6 +71,8 @@ const page = () => {
           <div className={style.projects} ref={projects}>
             <Link href="/projects">projects</Link>
           </div>
+
+          <SocialMediaIcons />
         </div>
       </div>
     </>

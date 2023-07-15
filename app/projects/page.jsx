@@ -6,6 +6,7 @@ import AboutLoader from "@/components/AboutLoader";
 import Navbar from "@/components/Navbar";
 import { Animate } from "@/hooks/animate";
 import data from "../../utils/projectData.json";
+import Images from "@/components/Images";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,27 +131,32 @@ export default function Projects() {
 
           <div className="box2">
             <div className="image-gallery">
-              <div className="gallery-col col-1">
-                <img src="/img1.jpg" alt="" />
-                <img src="/img2.jpg" alt="" />
-                <img src="/img3.jpg" alt="" />
-                <img src="/img4.jpg" alt="" />
-                <img src="/img5.jpg" alt="" />
-              </div>
-              <div className="gallery-col col-2">
-                <img src="/img6.jpg" alt="" />
-                <img src="/img7.jpg" alt="" />
-                <img src="/img5.jpg" alt="" />
-                <img src="/img4.jpg" alt="" />
-                <img src="/img3.jpg" alt="" />
-              </div>
-              <div className="gallery-col col-3">
-                <img src="/img2.jpg" alt="" />
-                <img src="/img1.jpg" alt="" />
-                <img src="/img3.jpg" alt="" />
-                <img src="/img4.jpg" alt="" />
-                <img src="/img5.jpg" alt="" />
-              </div>
+              <Images
+                image1="/img1.jpg"
+                image2="/img2.jpg"
+                image3="/img3.jpg"
+                image4="/img4.jpg"
+                image5="/img5.jpg"
+                class="gallery-col col-1"
+              />
+
+              <Images
+                image1="/img6.jpg"
+                image2="/img7.jpg"
+                image3="/img5.jpg"
+                image4="/img4.jpg"
+                image5="/img3.jpg"
+                class="gallery-col col-2"
+              />
+
+              <Images
+                image1="/img2.jpg"
+                image2="/img1.jpg"
+                image3="/img2.jpg"
+                image4="/img3.jpg"
+                image5="/img4.jpg"
+                class="gallery-col col-3"
+              />
             </div>
           </div>
         </section>

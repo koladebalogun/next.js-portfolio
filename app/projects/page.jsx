@@ -3,50 +3,23 @@ import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutLoader from "@/components/AboutLoader";
-import anime from "animejs/lib/anime.es.js";
 import Navbar from "@/components/Navbar";
+import { Animate } from "@/hooks/animate";
+import data from "../../utils/projectData.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
   const containerRef = useRef(null);
+  console.log(data);
 
-  useLayoutEffect(() => {
+  const CTX = (i) => {
+    console.log(i);
+    const index = i;
     const section = document.querySelectorAll("section");
 
-    console.log(containerRef.current.offsetWidth);
-
-    anime.timeline().add({
-      targets: ".name",
-      translateY: [200, 0],
-      translateZ: 0,
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: (el, i) => 2000 + 50 * i,
-    });
-
-    anime.timeline().add({
-      targets: ".name2",
-      translateY: [200, 0],
-      translateZ: 0,
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: (el, i) => 2200 + 50 * i,
-    });
-
-    anime.timeline().add({
-      targets: ".scroll",
-      translateY: [200, 0],
-      translateZ: 0,
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: (el, i) => 2300 + 50 * i,
-    });
-
     let ctx = gsap.context(() => {
+      console.log(index);
       const tl = gsap
         .timeline({
           scrollTrigger: {
@@ -62,7 +35,7 @@ export default function Projects() {
             -(
               containerRef.current.scrollWidth -
               document.documentElement.clientWidth -
-              80
+              5
             ) + "px",
           ease: "none",
           duration: 1,
@@ -128,6 +101,16 @@ export default function Projects() {
       };
     });
     return () => ctx.revert();
+  };
+
+  useLayoutEffect(() => {
+    if (containerRef.current.offsetWidth < 1000) {
+      Animate(".name", ".name2", ".scroll");
+      CTX(-80);
+    } else {
+      Animate(".name", ".name2", ".scroll");
+      CTX(5);
+    }
   }, []);
 
   return (
@@ -174,138 +157,40 @@ export default function Projects() {
 
         <section className="section-2">
           <div className="side-bar">
-            <div className="brand-name">Angelica Pownall</div>
+            <div className="brand-name">Kolade Balogun</div>
             <div className="des">
-              HIGH QUALITY ART-WORKS.{" "}
+              HIGH QUALITY WORKS.{" "}
               <b>
-                designed & made <br /> by Angelica Pownall
+                designed & made <br /> by Kolade Balogun
               </b>
             </div>
           </div>
-          <div className="inner-wrapper">
-            {/* <div className="left">
-              <div className="line-1">
-                <p>Angelina Pownall</p>
-                
-              </div>
-              <div className="image-wrapper">
-                <img src='/img6.jpg' alt="" />
-              </div>
 
+          <div className="project-container">
+            {data.map((item, i) => (
+              <div className="project-items-wrapper" key={i}>
+                <div className="project-item">
+                  <div className="project-item-inner">
+                    <a
+                      href={item.siteLink}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <img src={item.imageUrl} alt="" />
+                      <div className="item-overlay"></div>
 
-              <div className="line-2">
-                <p className="num">/23</p>
-                <p>SPRING</p>
-                <button className="loop">
-                    <span>COLLECTION / SHOP&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                </button>
-                <button className="loop loop2">
-                    <span>COLLECTION / SHOP&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                </button>
+                      <div className="item-copy">
+                        <div className="item-name">{item.name}</div>
+                        <div className="item-hover">
+                          Hover or click to visit project
+                        </div>
+                        <div className="item-id"> {item.id} </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div> */}
-
-            <div className="right">
-              <div className="animate-text">
-                <span>DALL-E IMAGE GENERATOR</span>
-                <p>
-                  A fullstack AI image generation app built on Open-AI Dall-E
-                  api. It generates images <br />
-                  based on a prompt passed in by the user.
-                  <br />
-                  <br />
-                  Built with: React, MongoDb, Node, Tailwind, Open Ai.
-                </p>
-                <a
-                  href="https://image-ai-gen.netlify.app/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  VISIT
-                </a>
-              </div>
-
-              <div className="img-container">
-                <img src="/gen.jpg" alt="" className="project-image" />
-              </div>
-            </div>
-
-            <div className="right">
-              <div className="animate-text">
-                <span>MEMORIES</span>
-                <p>
-                  A fully functional MERN stack social web app that allows users
-                  to post pictures, like
-                  <br /> and comment on the posts of other users.
-                  <br />
-                  <br />
-                  Built with: React, MongoDb, Redux, Node, Material Ui.
-                </p>
-                <a
-                  href="https://memmries.netlify.app/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  VISIT
-                </a>
-              </div>
-
-              <div className="img-container">
-                <img src="/mem.png" alt="" className="project-image" />
-              </div>
-            </div>
-
-            <div className="right">
-              <div className="animate-text">
-                <span>MOVIEZ</span>
-                <p>
-                  A fully functional movie web app that allows users to get the
-                  latest movies, filter by <br /> genre or category, search for
-                  any movie and also watchlist movies.
-                  <br />
-                  <br />
-                  Built with: React, Redux Toolkit, Tailwind, Tmdb Api.
-                </p>
-                <a
-                  href="https://mooviezzz.netlify.app/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Visit
-                </a>
-              </div>
-
-              <div className="img-container">
-                <img src="/moviez.png" alt="" className="project-image" />
-              </div>
-            </div>
-
-            <div className="right">
-              <div className="animate-text">
-                <span>CRYPTOWURLD</span>
-                <p>
-                  A fully functional web app that allows users to get the latest
-                  crypto news and stats by
-                  <br />
-                  It is also allows users connect to their MetaMask wallet and
-                  send Ethereum.
-                  <br />
-                  <br />
-                  Built with: React, Context Api, Solidity, Ether.js, Rapid Api.
-                </p>
-                <a
-                  href="https://cryptowurld.netlify.app/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Visit
-                </a>
-              </div>
-
-              <div className="img-container">
-                <img src="/cryptowurld.png" alt="" className="project-image" />
-              </div>
-            </div>
+            ))}
           </div>
         </section>
       </div>

@@ -31,4 +31,6 @@ export const Animate = (item1, item2, item3) => {
     duration: 2000,
     delay: (el, i) => 2300 + 50 * i,
   });
+
+  
 };

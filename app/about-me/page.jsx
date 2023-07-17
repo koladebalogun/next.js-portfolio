@@ -25,6 +25,13 @@ const page = () => {
       ease: "Expo.easeInOut",
       delay: 1.8,
     });
+
+    gsap.from(text.current,2, {
+      opacity:0,
+      ease: "Expo.easeInOut",
+      delay: 1.8,
+
+    })
   }, []);
 
   return (

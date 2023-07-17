@@ -15,7 +15,14 @@ body {
   height: 100vh;
   font-family: monument;
   background-color: #000;
+  /* /////////////////////////////////// */
+  scroll-behavior: smooth;
 }
+
+
+
+
+/* //////////////////////////////////////////////////// */
 
 nav {
   position: fixed;

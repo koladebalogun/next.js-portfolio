@@ -64,6 +64,7 @@
   color: #fff;
   line-height: 1.7;
   width: 30%;
+
 }
 
 .sidebartext p span {
@@ -102,10 +103,7 @@
 }
 
 .projects a {
-  /* position: absolute;
-  bottom: 10%;
-  left: 15%;
-  transform: translate(-50%, -50%); */
+  
   text-transform: uppercase;
   text-decoration: none;
   font-size: 18px;
@@ -138,38 +136,6 @@
   background: #fff;
   z-index: 2;
 }
-
-/* @media (max-width: 1440px) {
-  .wrapperimg {
-    width: 90%;
-  }
-
-  .header {
-    top: 50%;
-    left: 50%;
-    text-align: center;
-  }
-
-  .header1,
-  .header2 {
-    font-size: 40px;
-  }
-
-  .projects {
-    display: none;
-  }
-
-  .aboutmeloader {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    height: 20vh;
-    background: #fff;
-    z-index: 2;
-  }
-} */
 
 @media only screen and (max-width: 980px) {
   .container {
@@ -226,9 +192,6 @@
     font-size: 20px;
   }
 
-  /* .projects a {
-    left: 15%;
-  } */
 }
 
 @media only screen and (max-width: 500px) {
@@ -287,16 +250,6 @@
     font-size: 20px;
   }
 
-  /* .projects a {
-   left: 50%;
-    bottom: -20%;
-  } */
 }
 
-@media only screen and (max-width: 375px){
-  /* .projects a {
-    left: 23%;
-     bottom: -25%;
-   } */
-}
 

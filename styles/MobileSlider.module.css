@@ -29,7 +29,6 @@
 
 .bannerimages{
   display: grid;
-  /* margin-top: 16px; */
   place-items: center;
   width: 100%;
   position: relative;
@@ -65,8 +64,9 @@
   align-items: center;
   width: 58px;
   height: 30px;
-  background: #fff;
-  padding: 3px;
+  background: orangered;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 .sliderimage{

@@ -9,7 +9,7 @@ const SocialMediaIcons = () => {
         <div className={style.button}>
           <div className={style.icon}>
             <a
-              href="https://www.linkedin.com/in/koladebalogun/"
+              href="https://github.com/koladebalogun?tab=repositories"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -20,7 +20,7 @@ const SocialMediaIcons = () => {
         <div className={style.button}>
           <div className={style.icon}>
             <a
-              href="https://github.com/koladebalogun?tab=repositories"
+              href="https://www.linkedin.com/in/koladebalogun/"
               rel="noopener noreferrer"
               target="_blank"
             >
